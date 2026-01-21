@@ -22,6 +22,7 @@ const App = () => {
       try {
         const res = await fetch(url);
         const data = await res.json();
+        if (data.cod !== 200) return setWeather("");
         setWeather(data);
         setCity("");
       } catch (err) {
